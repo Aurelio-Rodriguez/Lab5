@@ -1,0 +1,19 @@
+Participant (ParticipantID, LastName, FirstName, Address, City, State, PostalCode, Telephone, DOB)
+
+Primary Key: ParticipantID
+AdventureClass (ClassID, ClassDescription, MaxParticipants, ClassFee)
+
+Primary Key: ClassID
+ClassSchedule (ScheduleID, ClassID, ClassDate, GuideID)
+
+Primary Key: ScheduleID
+Foreign Key: ClassID → AdventureClass(ClassID)
+Foreign Key: GuideID → Guide(GuideID)
+Guide (GuideID, LastName, FirstName, Email, PhoneNumber)
+
+Primary Key: GuideID
+Enrollment (EnrollmentID, ParticipantID, ScheduleID)
+
+Primary Key: EnrollmentID
+Foreign Key: ParticipantID → Participant(ParticipantID)
+Foreign Key: ScheduleID → ClassSchedule(ScheduleID)
